@@ -1,0 +1,37 @@
+{
+  "title": "The small team advantage",
+  "spineTitle": "SMALL TEAMS / 03",
+  "date": "JUL 17, 2026",
+  "subtitle": "A concise collection of practical notes, experiments, and ideas for people building what comes next.",
+  "status": "planned",
+  "experience": "viking-ship",
+  "carouselItems": [],
+  "journey": {
+    "intervalSeconds": 10,
+    "transitionSeconds": 1,
+    "textTransitionSeconds": 1.8,
+    "continueKey": "a",
+    "notes": [
+      {
+        "title": "hahahahahah art of direction ",
+        "paragraph": "Small teams move with purpose when everyone can see the horizon and understand the next step."
+      },
+      {
+        "title": "Keep the signal clear",
+        "paragraph": "Simple roles and open communication help a crew respond together when the water changes."
+      },
+      {
+        "title": "Make room for every strength",
+        "paragraph": "A resilient team brings different skills together, trusting each person to contribute where they are strongest."
+      },
+      {
+        "title": "Steady progress beats noise",
+        "paragraph": "Choose a pace the team can sustain. Consistent progress carries a project farther than constant urgency."
+      },
+      {
+        "title": "Learn from the crossing",
+        "paragraph": "After each challenge, share what worked and what did not. The next voyage gets better when the whole crew learns."
+      }
+    ]
+  }
+}

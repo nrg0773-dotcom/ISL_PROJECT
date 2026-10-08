@@ -1,0 +1,9 @@
+Book 4 Moksha experience attribution
+
+The scene implementation is adapted from the pmndrs/examples Moksha example:
+https://github.com/pmndrs/examples/tree/main/examples/moksha
+The example is provided under the MIT License.
+
+The diamond model and visual assets are bundled from that example. The example
+identifies the diamond asset as diamond.glb and its typeface as MOONGET_Heavy.
+Photographic source filenames are retained from the example distribution.

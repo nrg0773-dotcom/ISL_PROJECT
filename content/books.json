@@ -1,0 +1,30 @@
+{
+  "books": [
+    {
+      "id": "appleasdasjbdnasjdbasjkd",
+      "directory": "book-1",
+      "color": "#ff0000"
+
+    },
+    {
+      "id": "asdnasdadsdas-31",
+      "directory": "book-2",
+      "color": "#16277a"
+    },
+    {
+      "id": "editasdasdasion-30",
+      "directory": "book-3",
+      "color": "#2233b8"
+    },
+    {
+      "id": "edition-29",
+      "directory": "book-4",
+      "color": "#4040ff"
+    },
+    {
+      "id": "edition-28",
+      "directory": "book-5",
+      "color": "#6b7bff"
+    }
+  ]
+}

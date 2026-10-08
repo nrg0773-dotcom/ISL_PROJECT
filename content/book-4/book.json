@@ -1,0 +1,33 @@
+{
+  "title": "BackBitting hahahahaha",
+  "spineTitle": "BUILD IN PUBLIC / 04",
+  "date": "JUL 10, 2026",
+  "subtitle": "A concise collection of practical notes, experiments, and ideas for people building what comes next.",
+  "status": "planned",
+  "experience": "moksha",
+  "moksha": {
+    "sections": [
+      {
+        "header": "Make the work visible",
+        "text": "Share the questions, experiments, and small decisions behind the work. An open process gives others something useful to learn from."
+      },
+      {
+        "header": "Show the unfinished thinking",
+        "text": "A rough draft can invite better feedback than a polished reveal. Let people see what you are testing and where you are still uncertain."
+      },
+      {
+        "header": "Build trust through consistency",
+        "text": "Keep showing up with honest progress. Small, regular updates make it easier for people to follow along and contribute."
+      },
+      {
+        "header": "Make feedback part of the process",
+        "text": "Ask clear questions, listen closely, and explain what changed. Good collaboration turns outside perspective into better work."
+      },
+      {
+        "header": "Leave a trail others can follow",
+        "text": "Document what worked and what did not. Sharing the path makes the next attempt easier for you and for the people who come after."
+      }
+    ],
+    "closing": "The next draft starts in the open."
+  }
+}

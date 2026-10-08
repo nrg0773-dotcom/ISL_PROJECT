@@ -1,0 +1,10 @@
+Viking ship GLB asset attribution
+
+Title: Thor and the Midgard Serpent
+Creator: MrEmjeR (Sketchfab: https://sketchfab.com/MatthijsDeRijk)
+Source: https://sketchfab.com/models/2ef4c45caa35450db1b876a7f94ff79d
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+License URL: https://creativecommons.org/licenses/by/4.0/
+
+The asset is provided by the pmndrs/examples viking-ship example:
+https://github.com/pmndrs/examples/tree/main/examples/viking-ship

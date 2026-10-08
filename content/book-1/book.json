@@ -1,0 +1,48 @@
+{
+  "title": "The systems issue",
+  "spineTitle": "SYSTEMS / 01",
+  "date": "554765",
+  "subtitle": "A concise collection of practical notes, experiments, and ideas for people building what comes next.",
+  "carouselItems": [
+    {
+      "title": "Field abracadabraNotes",
+      "description": "Small observations for more thoughtful work.",
+      "category": "Ideas"
+    },
+    {
+      "title": "A Softer Signasdl",
+      "description": "arity in a noisy, fast-moving world.",
+      "category": "Culture"
+    },
+    {
+      "title": "Good Systems",
+      "description": "Simple routines that make room for better ideas.",
+      "category": "Practice"
+    },
+    {
+      "title": "Open Studio",
+      "description": "A look at the process behind meaningful things.",
+      "category": "Making"
+    },
+    {
+      "title": "Useful Wonder",
+      "description": "Questions, experiments, and unexpected answers.",
+      "category": "Research"
+    },
+    {
+      "title": "Slow Momentum",
+      "description": "Building steadily without losing the human touch.",
+      "category": "Work"
+    },
+    {
+      "title": "New Angles",
+      "description": "Fresh perspectives on familiar problems.",
+      "category": "Design"
+    },
+    {
+      "title": "The Next Draft",
+      "description": "Notes on what to keep, change, and try again.",
+      "category": "Notes"
+    }
+  ]
+}
