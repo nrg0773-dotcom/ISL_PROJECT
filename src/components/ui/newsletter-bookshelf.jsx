@@ -3,7 +3,8 @@
 
 import { cn } from "@/lib/utils";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, Suspense } from "react";
+import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 
@@ -750,6 +751,32 @@ function CameraRig({
   return null;
 }
 
+function WatercolorScene() {
+  const { scene } = useGLTF("/models/handpainted-watercolor-scene/scene.gltf");
+  const model = useMemo(() => scene.clone(true), [scene]);
+  const { center, scale } = useMemo(() => {
+    model.updateMatrixWorld(true);
+    const bounds = new THREE.Box3().setFromObject(model);
+    if (bounds.isEmpty()) {
+      throw new Error("The watercolor scene has no visible geometry.");
+    }
+    const center = bounds.getCenter(new THREE.Vector3());
+    const dimensions = bounds.getSize(new THREE.Vector3());
+    return {
+      center,
+      scale: 5.2 / Math.max(dimensions.x, dimensions.y, dimensions.z),
+    };
+  }, [model]);
+
+  return (
+    <group position={[0, 2.05, -3.2]} scale={scale} dispose={null}>
+      <group position={center.clone().negate()}>
+        <primitive object={model} dispose={null} />
+      </group>
+    </group>
+  );
+}
+
 function Scene({
   books,
   hoveredIndex,
@@ -781,6 +808,9 @@ function Scene({
       <ambientLight intensity={1.5} />
       <hemisphereLight args={["#ffffff", "#d7dce8", 1.2]} />
       <directionalLight position={[5, 8, 7]} intensity={2.2} />
+      <Suspense fallback={null}>
+        <WatercolorScene />
+      </Suspense>
 
       {books.map((book, index) => (
         <Book
@@ -1054,7 +1084,7 @@ export function NewsletterBookshelf({
   return (
     <section
       className={cn(
-        "relative isolate w-full overflow-hidden bg-[#fbfbfa] text-[#171717] [--shelf-accent:#4040ff] dark:bg-[#111112] dark:text-[#f5f5f3]",
+        "relative isolate w-full overflow-hidden bg-[#fbfbfa]/72 text-[#171717] [--shelf-accent:#4040ff] dark:bg-[#111112]/12 dark:text-[#f5f5f3]",
         className,
       )}
       style={{
@@ -1138,7 +1168,7 @@ export function NewsletterBookshelf({
         {!sceneReady && (
           <div
             aria-live="polite"
-            className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-[#fbfbfa] text-[#77766f] dark:bg-[#111112] dark:text-white/65"
+            className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-[#fbfbfa] text-[#77766f] dark:bg-[#111112]/12 dark:text-white/65"
             role="status"
           >
             <span className="h-6 w-6 animate-spin rounded-full border-2 border-current border-r-transparent" />

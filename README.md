@@ -24,6 +24,24 @@ heading and paragraph beside the laptop. The model is kept locally under
 `src/components/ui/book-two-occlusion/`. The pmndrs MIT license is included
 at `public/PMNDRS-LICENSE.txt`.
 
+Book 4's original Moksha-inspired copy and image filenames live in
+`content/book-4/book.json`. Update `moksha.images` to select different local
+`.jpg` or `.jpeg` assets from `src/components/ui/book-four-moksha/assets/`;
+each section uses the image at the matching position in the list.
+The Book 4 scrolling layout, custom text and image materials, and refractive
+diamond field are adapted from the MIT-licensed
+[pmndrs Moksha example](https://github.com/pmndrs/examples/tree/main/examples/moksha).
+Its license notice is included at `public/PMNDRS-LICENSE.txt`.
+
+Book 5 uses a timed 3D model journey with floating Drei text and `A`-key
+progression, adapted from Book 3. Edit `journey.notes` and its timing settings
+in `content/book-5/book.json`; `submergedEra.targetDepth` controls the model's
+depth in the scene. The model and textures are hosted in
+`public/models/book-five-submerged/`; keep that folder structure intact so
+the model's relative asset references resolve. The model is by Omar Faruq
+Tawsif under CC BY 4.0; attribution is displayed in the experience and
+included at `public/SUBMERGED-ERA-LICENSE.txt`.
+
 Run `npm run dev` to preview changes, `npm run lint` to lint the project, and
 `npm run build` to create a production build.
 

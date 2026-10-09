@@ -184,7 +184,7 @@ function FloatingChapterText({
           anchorY="bottom"
           color="#ffffff"
           font={LOBSTER_TWO_FONT}
-          fontSize={compactLayout ? 0.28 : 0.32}
+          fontSize={compactLayout ? 0.34 : 0.4}
           maxWidth={compactLayout ? 3.4 : 3}
           fillOpacity={1}
           material-transparent
@@ -197,7 +197,7 @@ function FloatingChapterText({
           anchorY="top"
           color="#c9c8d0"
           font={STORY_SCRIPT_FONT}
-          fontSize={compactLayout ? 0.14 : 0.15}
+          fontSize={compactLayout ? 0.18 : 0.2}
           lineHeight={1.45}
           maxWidth={compactLayout ? 3.4 : 3}
           fillOpacity={1}
@@ -211,7 +211,7 @@ function FloatingChapterText({
           anchorY="bottom"
           color="#ffffff"
           font={LOBSTER_TWO_FONT}
-          fontSize={compactLayout ? 0.28 : 0.32}
+          fontSize={compactLayout ? 0.34 : 0.4}
           maxWidth={compactLayout ? 3.4 : 3}
           fillOpacity={1}
           material-transparent
@@ -224,7 +224,7 @@ function FloatingChapterText({
           anchorY="top"
           color="#c9c8d0"
           font={STORY_SCRIPT_FONT}
-          fontSize={compactLayout ? 0.14 : 0.15}
+          fontSize={compactLayout ? 0.18 : 0.2}
           lineHeight={1.45}
           maxWidth={compactLayout ? 3.4 : 3}
           fillOpacity={1}

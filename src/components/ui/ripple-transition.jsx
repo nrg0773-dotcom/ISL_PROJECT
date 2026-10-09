@@ -39,6 +39,7 @@ uniform float chroma;
 uniform float highlight;
 uniform float roughness;
 uniform float pinchAmount;
+uniform int transitionStyle;
 
 float random2(vec2 p) {
   return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
@@ -86,21 +87,58 @@ void main() {
   float farthest = length(vec2(aspect, 1.));
   float distance01 = distanceFromOrigin * 2. / farthest;
   float agitation = (layeredNoise(radial * 9. + phase * 1.8) - .5) * roughness;
-  float boundary = phase * speed;
-  float signedDistance = distance01 + agitation - boundary;
-  float wave = exp(-(signedDistance * signedDistance) / max(.0001, 2. * thickness * thickness));
-  wave *= .55 + .45 * cos(signedDistance * frequency * 6.28318);
-  wave *= smoothstep(0., .08, phase) * (1. - smoothstep(.82, 1., phase));
-
+  float signedDistance = 0.;
+  float wave = 0.;
+  float reveal = 0.;
   vec2 direction = distanceFromOrigin > .0001 ? radial / distanceFromOrigin : vec2(0.);
   direction.x /= aspect;
+  vec2 fromPoint = uv;
+  vec2 toPoint = uv;
+
+  if (transitionStyle == 0) {
+    signedDistance = distance01 + agitation - phase * speed;
+    wave = exp(-(signedDistance * signedDistance) / max(.0001, 2. * thickness * thickness));
+    wave *= .55 + .45 * cos(signedDistance * frequency * 6.28318);
+    wave *= smoothstep(0., .08, phase) * (1. - smoothstep(.82, 1., phase));
+    reveal = 1. - smoothstep(-.045, .045, signedDistance);
+  } else if (transitionStyle == 1) {
+    vec2 cell = floor(uv * vec2(16., 10.));
+    float cellNoise = random2(cell);
+    signedDistance = cellNoise - (phase * 1.1 - .05);
+    wave = exp(-(signedDistance * signedDistance) / max(.0001, 2. * thickness * thickness));
+    reveal = 1. - smoothstep(-.04, .04, signedDistance);
+    float cellAngle = cellNoise * 6.28318;
+    direction = vec2(cos(cellAngle), sin(cellAngle));
+  } else if (transitionStyle == 2) {
+    float diagonal = uv.y + (uv.x - .5) * .28;
+    signedDistance = diagonal - (1.1 - phase * 1.4) + agitation * .12;
+    wave = exp(-(signedDistance * signedDistance) / max(.0001, 2. * thickness * thickness));
+    reveal = 1. - smoothstep(-.035, .035, signedDistance);
+    direction = normalize(vec2(.28, 1.));
+    fromPoint = (uv - .5) * (1. + phase * .12) + .5;
+    toPoint = (uv - .5) * (1. + (1. - phase) * .12) + .5;
+  } else if (transitionStyle == 3) {
+    signedDistance = uv.x + sin(uv.y * frequency * 6.28318 + phase * 6.28318) * thickness * .65 - phase * 1.15 + .08;
+    wave = exp(-(signedDistance * signedDistance) / max(.0001, 2. * thickness * thickness));
+    reveal = 1. - smoothstep(-.035, .035, signedDistance);
+    direction = vec2(1., 0.);
+  } else {
+    float waterNoise = layeredNoise(uv * vec2(14., 10.) + vec2(phase * 3., -phase * 2.));
+    signedDistance = distance01 + (waterNoise - .5) * roughness * 1.5 - phase * speed;
+    wave = exp(-(signedDistance * signedDistance) / max(.0001, 2. * thickness * thickness));
+    wave *= .6 + .4 * cos(signedDistance * frequency * 6.28318);
+    reveal = 1. - smoothstep(-.05, .05, signedDistance);
+    vec2 waterDirection = vec2(radial.x + waterNoise - .5, radial.y);
+    direction = length(waterDirection) > .0001
+      ? normalize(waterDirection)
+      : vec2(0., 1.);
+  }
+
   float centerPull = exp(-distanceFromOrigin * distanceFromOrigin * 45.) * pinchAmount;
   vec2 offset = direction * (wave * displacement - centerPull * .018);
   vec2 split = direction * wave * chroma;
-  float reveal = 1. - smoothstep(-.045, .045, signedDistance);
-
-  vec3 before = splitSample(fromImage, fromSize, uv - offset, split);
-  vec3 after = splitSample(toImage, toSize, uv - offset, split);
+  vec3 before = splitSample(fromImage, fromSize, fromPoint - offset, split);
+  vec3 after = splitSample(toImage, toSize, toPoint + offset, split);
   vec3 color = mix(before, after, reveal);
   color += wave * highlight * .38;
   color *= 1. - centerPull * .12;
@@ -298,6 +336,7 @@ class RippleRenderer {
     gl.uniform1f(this.location("highlight"), s.glow);
     gl.uniform1f(this.location("roughness"), s.noiseWarp * 0.09);
     gl.uniform1f(this.location("pinchAmount"), s.pinch ? 1 : 0);
+    gl.uniform1i(this.location("transitionStyle"), s.style);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
   }
 
@@ -317,6 +356,7 @@ function RippleTransitionCanvas({
   ease = "easeInOut",
   playOnMount = false,
   onComplete,
+  onError,
   autoPlay = false,
   autoPlayInterval = 3200,
   autoPlayOrigin = "center",
@@ -328,6 +368,7 @@ function RippleTransitionCanvas({
   glow = 0.73,
   noiseWarp = 1,
   pinch = false,
+  transitionStyle = "radial",
   borderRadius = 24,
   background = "#111416",
   label = "Ripple image transition",
@@ -341,16 +382,34 @@ function RippleTransitionCanvas({
   const playRef = React.useRef(() => undefined);
   const onCompleteRef = React.useRef(onComplete);
   onCompleteRef.current = onComplete;
-  const settings = React.useMemo(() => ({
-    waveSpeed,
-    sigma,
-    waveFreq,
-    pushAmt,
-    caStrength,
-    glow,
-    noiseWarp,
-    pinch,
-  }), [caStrength, glow, noiseWarp, pinch, pushAmt, sigma, waveFreq, waveSpeed]);
+  const onErrorRef = React.useRef(onError);
+  React.useEffect(() => {
+    onErrorRef.current = onError;
+  }, [onError]);
+  const settings = React.useMemo(() => {
+    const styles = {
+      radial: 0,
+      mosaic: 1,
+      diagonal: 2,
+      curtain: 3,
+      underwater: 4,
+    };
+    const style = styles[transitionStyle];
+    if (style === undefined) {
+      throw new Error(`Unknown ripple transition style: ${transitionStyle}`);
+    }
+    return {
+      waveSpeed,
+      sigma,
+      waveFreq,
+      pushAmt,
+      caStrength,
+      glow,
+      noiseWarp,
+      pinch,
+      style,
+    };
+  }, [caStrength, glow, noiseWarp, pinch, pushAmt, sigma, transitionStyle, waveFreq, waveSpeed]);
   const settingsRef = React.useRef(settings);
   settingsRef.current = settings;
 
@@ -365,55 +424,69 @@ function RippleTransitionCanvas({
     const abortController = new AbortController();
     let animation = null;
     let engine = null;
+    let observer = null;
     let busy = false;
     let current = 0;
 
-    fetchPictures(images, abortController.signal).then((pictures) => {
-      if (abortController.signal.aborted) return;
-      if (pictures.length < 2) {
-        onCompleteRef.current?.();
-        return;
-      }
-      engine = new RippleRenderer(canvas, pictures, settingsRef.current);
-      engineRef.current = engine;
-      const observer = new ResizeObserver(([entry]) => {
-        const box = entry?.contentRect;
-        if (box) engine?.resize(box.width, box.height);
-      });
-      observer.observe(root);
-      engine.resize(root.clientWidth, root.clientHeight);
+    const initialize = async () => {
+      try {
+        const pictures = await fetchPictures(images, abortController.signal);
+        if (abortController.signal.aborted) return;
+        if (pictures.length < 2) {
+          throw new Error("At least two transition images must load.");
+        }
 
-      playRef.current = (x = 0.5, y = 0.5) => {
-        if (busy || pictures.length < 2 || !engine) return;
-        busy = true;
-        engine.begin(x, y);
-        animation?.stop();
-        animation = animate(0, 1, {
-          duration,
-          ease,
-          onUpdate: (value) => engine?.setPhase(value),
-          onComplete: () => {
-            current = (current + 1) % pictures.length;
-            const following = pictures[(current + 1) % pictures.length];
-            engine?.advance(following, (current + 1) % 2);
-            busy = false;
-            onCompleteRef.current?.();
-          },
+        engine = new RippleRenderer(canvas, pictures, settingsRef.current);
+        engineRef.current = engine;
+        observer = new ResizeObserver(([entry]) => {
+          const box = entry?.contentRect;
+          if (box) engine?.resize(box.width, box.height);
         });
-      };
+        observer.observe(root);
+        engine.resize(root.clientWidth, root.clientHeight);
 
-      if (playOnMount) playRef.current();
+        playRef.current = (x = 0.5, y = 0.5) => {
+          if (busy || !engine) return;
+          busy = true;
+          engine.begin(x, y);
+          animation?.stop();
+          animation = animate(0, 1, {
+            duration,
+            ease,
+            onUpdate: (value) => engine?.setPhase(value),
+            onComplete: () => {
+              current = (current + 1) % pictures.length;
+              const following = pictures[(current + 1) % pictures.length];
+              engine?.advance(following, (current + 1) % 2);
+              busy = false;
+              onCompleteRef.current?.();
+            },
+          });
+        };
 
-      abortController.signal.addEventListener(
-        "abort",
-        () => {
-          observer.disconnect();
+        if (playOnMount) playRef.current();
+
+        abortController.signal.addEventListener(
+          "abort",
+          () => {
+            observer?.disconnect();
+            animation?.stop();
+            engine?.destroy();
+          },
+          { once: true },
+        );
+      } catch (error) {
+        if (!abortController.signal.aborted) {
+          console.error("Unable to initialize the ripple image transition.", error);
+          observer?.disconnect();
           animation?.stop();
           engine?.destroy();
-        },
-        { once: true },
-      );
-    });
+          engineRef.current = null;
+          onErrorRef.current?.(error);
+        }
+      }
+    };
+    initialize();
 
     return () => {
       playRef.current = () => undefined;
@@ -469,16 +542,23 @@ function RippleTransitionCanvas({
 }
 
 export function RippleTransition(props) {
+  const { onError, ...transitionProps } = props;
+  const handleError = (error, errorInfo) => {
+    console.error("Ripple transition rendering failed.", error, errorInfo);
+    onError?.(error, errorInfo);
+  };
+
   return (
     <WebGLErrorBoundary
+      onError={handleError}
       fallback={
         <WebGLFallback
-          className={props.className}
+          className={transitionProps.className}
           message="Ripple transitions need WebGL, which is unavailable in this browser."
         />
       }
     >
-      <RippleTransitionCanvas {...props} />
+      <RippleTransitionCanvas {...transitionProps} onError={onError} />
     </WebGLErrorBoundary>
   );
 }

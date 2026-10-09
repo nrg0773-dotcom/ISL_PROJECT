@@ -1,8 +1,36 @@
 {
-  "title": "A better creative workflow",
-  "spineTitle": "CREATIVE WORK / 05",
-  "date": "JUL 03, 2026",
-  "subtitle": "A concise collection of practical notes, experiments, and ideas for people building what comes next.",
-  "status": "planned",
-  "carouselItems": []
+  "title": "Guarding the Tongue",
+  "spineTitle": "GUARDING THE TONGUE / 06",
+  "date": "AUG 01, 2026",
+  "subtitle": "A concise collection of practical notes, ideas, and reminders on the importance of controlling speech in Islam.",
+  "status": "in progress",
+  "experience": "submerged-era",
+  "carouselItems": [],
+  "submergedEra": {
+    "modelUrl": "/models/book-five-submerged/scene.gltf",
+    "targetDepth": 8
+  },
+  "journey": {
+    "intervalSeconds": 10,
+    "textTransitionSeconds": 1.8,
+    "continueKey": "a",
+    "notes": [
+      {
+        "title": "The power of a small part",
+        "paragraph": "The tongue is a small part of the body, but through it a person can teach, encourage, and make peace—or cause serious harm through lying, backbiting, and hurtful words[cite: 12]."
+      },
+      {
+        "title": "Speak good or remain silent",
+        "paragraph": "Whoever believes in Allah and the Last Day should speak good or remain silent, choosing safety from unnecessary and harmful speech[cite: 14]."
+      },
+      {
+        "title": "Wounds of words",
+        "paragraph": "An Arabic wisdom saying reminds us that the wound caused by words can be more severe than the wound caused by arrows, leaving lasting memories in people[cite: 15]."
+      },
+      {
+        "title": "Guard your daily speech",
+        "paragraph": "Before speaking, ask whether it is true, beneficial, and respectful, protecting others and keeping family and community relationships strong[cite: 12, 16]."
+      }
+    ]
+  }
 }

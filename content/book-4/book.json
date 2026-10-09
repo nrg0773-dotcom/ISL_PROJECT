@@ -1,33 +1,55 @@
 {
-  "title": "BackBitting hahahahaha",
-  "spineTitle": "BUILD IN PUBLIC / 04",
+  "title": "The quiet art of letting go",
+  "spineTitle": "MOKSHA / 04",
   "date": "JUL 10, 2026",
-  "subtitle": "A concise collection of practical notes, experiments, and ideas for people building what comes next.",
+  "subtitle": "A visual reflection on attention, release, and guarding the honor of others from backbiting.",
   "status": "planned",
   "experience": "moksha",
   "moksha": {
+    "images": [
+      "photo-1515036551567-bf1198cccc35.jpeg",
+      "photo-1519608487953-e999c86e7455.jpeg",
+      "ph1.jpg",
+      "ph3.jpg",
+      "photo-1533577116850-9cc66cad8a9b.jpeg"
+    ],
     "sections": [
       {
-        "header": "Make the work visible",
-        "text": "Share the questions, experiments, and small decisions behind the work. An open process gives others something useful to learn from."
+        "offset": 1,
+        "factor": 1.75,
+        "aspect": 1.51,
+        "header": "The reality of Ghibah",
+        "text": "Backbiting (ghibah) means speaking about a person in their absence in a manner that they dislike[cite: 18].\n\nTrue or false, faults mentioned behind someone's back carry serious spiritual weight."
       },
       {
-        "header": "Show the unfinished thinking",
-        "text": "A rough draft can invite better feedback than a polished reveal. Let people see what you are testing and where you are still uncertain."
+        "offset": 2,
+        "factor": 2,
+        "aspect": 1.5,
+        "header": "A profound warning",
+        "text": "The Qur'an compares backbiting to eating the flesh of one's dead brother, emphasizing how indefensible the act is[cite: 19].\n\nEvery word is recorded, and careless speech can waste accumulated good deeds[cite: 20, 21]."
       },
       {
-        "header": "Build trust through consistency",
-        "text": "Keep showing up with honest progress. Small, regular updates make it easier for people to follow along and contribute."
+        "offset": 3,
+        "factor": 2.25,
+        "aspect": 1.5037,
+        "header": "Recognize the motives",
+        "text": "People often backbite out of peer pressure, venting anger, envy, or even false sympathy[cite: 19].\n\nRecognizing these underlying motives is the first step toward transforming your habits."
       },
       {
-        "header": "Make feedback part of the process",
-        "text": "Ask clear questions, listen closely, and explain what changed. Good collaboration turns outside perspective into better work."
+        "offset": 4,
+        "factor": 2,
+        "aspect": 0.665,
+        "header": "Defend and protect",
+        "text": "A believer's duty is not just to abstain from backbiting, but to defend the honor of an absent brother or sister[cite: 22].\n\nChoosing silence or changing the subject safeguards both your character and your community."
       },
       {
-        "header": "Leave a trail others can follow",
-        "text": "Document what worked and what did not. Sharing the path makes the next attempt easier for you and for the people who come after."
+        "offset": 5,
+        "factor": 1.75,
+        "aspect": 1.55,
+        "header": "Return to purity",
+        "text": "Sincere repentance involves stopping immediately, feeling regret, and seeking forgiveness from those wronged[cite: 23].\n\nPurify your tongue and carry that clarity into every conversation."
       }
     ],
-    "closing": "The next draft starts in the open."
+    "closing": "Guard your tongue. Begin again."
   }
 }

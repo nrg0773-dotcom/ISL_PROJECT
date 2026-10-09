@@ -1,48 +1,78 @@
 {
-  "title": "The systems issue",
-  "spineTitle": "SYSTEMS / 01",
-  "date": "554765",
-  "subtitle": "A concise collection of practical notes, experiments, and ideas for people building what comes next.",
+  "title": "False Information in Islam",
+  "spineTitle": "TRUTH / 01",
+  "date": "2026",
+  "subtitle": "A study of verification, responsibility, intention, and ethical communication in Islam.",
   "carouselItems": [
     {
-      "title": "Field abracadabraNotes",
-      "description": "Small observations for more thoughtful work.",
-      "category": "Ideas"
+      "title": "Verify the News",
+      "description": "The Qur'an teaches believers to investigate important reports. A report should not be accepted immediately just because it sounds convincing. Its source and reliability should be examined. This is especially important when the information affects other people. Acting without verification can lead to injustice. Qur'an 49:6 gives the principle of verification. Truth should be established before serious action is taken.",
+      "category": "Qur'an 49:6"
     },
     {
-      "title": "A Softer Signasdl",
-      "description": "arity in a noisy, fast-moving world.",
-      "category": "Culture"
+      "title": "Do Not Assume",
+      "description": "Islam warns against speaking about matters without knowledge. Hearing something does not make it true. A person must distinguish between knowledge and assumption. Evidence is more important than confidence. The Qur'an connects hearing, seeing, and the heart with responsibility. Therefore, people are accountable for how they use information. This principle applies directly to modern information sharing.",
+      "category": "Qur'an 17:36"
     },
     {
-      "title": "Good Systems",
-      "description": "Simple routines that make room for better ideas.",
-      "category": "Practice"
+      "title": "The Incident of Ifk",
+      "description": "The Incident of Ifk involved a serious false accusation against Aisha (RA). The accusation spread through the Muslim community. Some people repeated what they had heard without sufficient knowledge. The Qur'an condemned this careless circulation. Believers were taught to think positively and demand evidence. The incident shows the human cost of rumors. It remains a major example of responsible information handling.",
+      "category": "Qur'an 24:11–20"
     },
     {
-      "title": "Open Studio",
-      "description": "A look at the process behind meaningful things.",
-      "category": "Making"
+      "title": "How Rumors Spread",
+      "description": "A false report does not need to be invented by every person who spreads it. One person may create it while others simply repeat it. Each repetition can make the claim appear more believable. People may also add details that were never part of the original report. Social media can accelerate this process dramatically. Islam discourages transmitting information without verification. Responsibility therefore exists at every stage of transmission.",
+      "category": "Information Spread"
     },
     {
-      "title": "Useful Wonder",
-      "description": "Questions, experiments, and unexpected answers.",
-      "category": "Research"
+      "title": "Truthful Speech",
+      "description": "The Qur'an commands believers to speak words that are straight and truthful. Truthful speech means more than avoiding intentional lies. It also requires honesty about what a person actually knows. Uncertainty should not be presented as certainty. Important claims should be communicated carefully. Speech can protect people or cause serious harm. Therefore, communication itself carries moral responsibility.",
+      "category": "Qur'an 33:70"
     },
     {
-      "title": "Slow Momentum",
-      "description": "Building steadily without losing the human touch.",
-      "category": "Work"
+      "title": "Falsehood and Intention",
+      "description": "Not every false statement is necessarily a deliberate lie. A person may sincerely believe information that later proves to be false. This differs from someone who knowingly invents false information. Intention therefore matters when judging the person's wrongdoing. However, good intentions do not automatically make careless sharing acceptable. Reasonable verification is still required. Knowledge, intention, and consequences should all be considered.",
+      "category": "Islamic Ethics"
     },
     {
-      "title": "New Angles",
-      "description": "Fresh perspectives on familiar problems.",
-      "category": "Design"
+      "title": "The Prophet's Warning",
+      "description": "The Prophet Muhammad ﷺ warned against simply repeating everything a person hears. He said: \"It is enough falsehood for a person that he narrates everything he hears.\" This hadith directly addresses careless transmission. A person does not have to invent a rumor to contribute to falsehood. Repeating unreliable information can help it spread. Muslims are therefore encouraged to control what they transmit. Responsible sharing begins with responsible listening.",
+      "category": "Sahih Muslim"
     },
     {
-      "title": "The Next Draft",
-      "description": "Notes on what to keep, change, and try again.",
-      "category": "Notes"
+      "title": "Claim or Fact?",
+      "description": "There is a difference between reporting a claim and declaring that the claim is true. Saying \"X claimed this\" does not mean that X's statement has been proven. A responsible communicator should preserve this distinction. Sources should be identified where possible. Uncertainty should be clearly communicated. This prevents rumors from being presented as established facts. The distinction is especially important in journalism and social media.",
+      "category": "Communication"
+    },
+    {
+      "title": "Good Intention Is Not Enough",
+      "description": "A person may share false information because they genuinely want to help others. However, a good intention does not automatically make the information reliable. Sharing an unverified warning can create unnecessary fear. Sharing an accusation can damage someone's reputation. Islam combines good intention with responsible action. A person should therefore ask whether the information is true before sharing it. Benefit should be pursued without creating avoidable harm.",
+      "category": "Responsibility"
+    },
+    {
+      "title": "Speak or Remain Silent",
+      "description": "The Prophet ﷺ taught that whoever believes in Allah and the Last Day should speak good or remain silent. This gives a simple rule for responsible communication. Not every piece of information needs to be repeated. Silence can be better than spreading uncertainty. Speech should have a meaningful purpose. It should not create unnecessary harm or confusion. Responsible communication therefore includes knowing when not to speak.",
+      "category": "Sahih al-Bukhari & Muslim"
+    },
+    {
+      "title": "When Information Is Urgent",
+      "description": "Some situations require information to be communicated quickly. Emergencies may make complete verification difficult. However, urgency does not remove the responsibility to avoid knowingly false claims. A person should communicate what is reasonably established. Uncertain details should be identified as uncertain. Sources and evidence should be checked as far as possible. The greater the potential harm, the greater the need for caution.",
+      "category": "Practical Ethics"
+    },
+    {
+      "title": "The Islamic Method",
+      "description": "First, identify what information is actually being claimed. Second, examine the source and available evidence. Third, distinguish fact from assumption or rumor. Fourth, consider the possible consequences of sharing it. Fifth, communicate the information according to the level of certainty available. If reliable verification is impossible, avoid presenting the claim as fact. This creates a practical Islamic method for responsible communication.",
+      "category": "Methodology"
+    },
+    {
+      "title": "Modern Social Media",
+      "description": "Modern platforms allow information to reach thousands of people within seconds. A false claim can therefore spread much faster than traditional rumors. Likes, shares, and repetition can create an illusion of credibility. Islam's principles of verification remain relevant in this environment. Users should check sources before forwarding posts or videos. Screenshots and viral posts are not automatically evidence. Digital communication still carries the same moral responsibility.",
+      "category": "Modern Application"
+    },
+    {
+      "title": "The Core Principle",
+      "description": "Islam does not treat information as morally neutral when it affects people. The truth of a statement, the knowledge of the speaker, and the intention behind sharing it all matter. The possible consequences should also be considered. A person should not turn uncertainty into certainty. Verification should come before serious judgment or action. The goal is communication that is truthful, careful, and just.",
+      "category": "Conclusion"
     }
   ]
 }

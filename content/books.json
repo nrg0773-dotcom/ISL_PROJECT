@@ -3,28 +3,27 @@
     {
       "id": "appleasdasjbdnasjdbasjkd",
       "directory": "book-1",
-      "color": "#ff0000"
-
+      "color": "#1b4d3e"
     },
     {
       "id": "asdnasdadsdas-31",
       "directory": "book-2",
-      "color": "#16277a"
+      "color": "#0d3b66"
     },
     {
       "id": "editasdasdasion-30",
       "directory": "book-3",
-      "color": "#2233b8"
+      "color": "#2c3e50"
     },
     {
       "id": "edition-29",
       "directory": "book-4",
-      "color": "#4040ff"
+      "color": "#4a3b5c"
     },
     {
       "id": "edition-28",
       "directory": "book-5",
-      "color": "#6b7bff"
+      "color": "#5c3a21"
     }
   ]
 }

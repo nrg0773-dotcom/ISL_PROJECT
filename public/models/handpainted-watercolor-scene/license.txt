@@ -1,0 +1,11 @@
+Model Information:
+* title:	Handpainted watercolor scene
+* source:	https://sketchfab.com/3d-models/handpainted-watercolor-scene-0bd8711c1e944b159fdd0b47ca13c0d8
+* author:	Omar Faruq Tawsif (https://sketchfab.com/omarfaruqtawsif32)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Handpainted watercolor scene" (https://sketchfab.com/3d-models/handpainted-watercolor-scene-0bd8711c1e944b159fdd0b47ca13c0d8) by Omar Faruq Tawsif (https://sketchfab.com/omarfaruqtawsif32) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

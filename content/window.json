@@ -1,0 +1,12 @@
+{
+  "eyebrow": {
+    "text": "The Brief / Archive",
+    "color": "#a1a1aa",
+    "fontSize": "10px"
+  },
+  "title": {
+    "text": "ART OF Toungue",
+    "color": "#ffff33",
+    "fontSize": "clamp(1.875rem, 3vw, 2.25rem)"
+  }
+}

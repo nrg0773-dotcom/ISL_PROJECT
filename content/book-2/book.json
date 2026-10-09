@@ -1,72 +1,92 @@
 {
-  "title": "A field guide to good taste",
-  "spineTitle": "GOODbye / 02",
-  "date": "JUL 24, 2026",
-  "subtitle": "A concise collection of practical notes, experiments, and ideas for people building what comes next.",
+  "title": "Spying & Privacy in Islam",
+
+  "spineTitle": "PRIVACY / 01",
+
+  "date": "OCT 09, 2026",
+
+  "subtitle": "Islamic guidance on digital spying, privacy, permission, trust, and protecting the dignity of others.",
+
   "status": "planned",
+
   "carouselItems": [],
+
   "experience": "mixing-html-and-webgl-w-occlusion",
+
   "readingPage": {
-    "eyebrow": "THE BRIEF / EDITION 02",
-    "title": "A field guide to good taste"
+    "eyebrow": "ISLAMIC ETHICS / PRIVACY",
+    "title": "Spying & Privacy in Islam"
   },
+
   "cards": [
     {
-      "title": "Start with attention",
-      "paragraph": "Good taste begins with noticing. Look closely at the details you return to and the choices that make an experience feel clear."
+      "title": "What Counts as Digital Spying?",
+      "paragraph": "Digital spying means deliberately searching for someone’s private information without permission or a legitimate reason."
     },
+
     {
-      "title": "Make room for a point of view",
-      "paragraph": "A strong point of view is the confidence to choose what matters, remove what distracts, and let useful details speak."
+      "title": "Do Not Spy",
+      "paragraph": "The Qur’an teaches: “Wa la tajassasu” — do not spy. Suspicion should not become an invasion of another person’s privacy."
     },
+
     {
-      "title": "Follow the small details",
-      "paragraph": "Materials, rhythm, language, and spacing shape how something feels. Small decisions become meaningful when they support the same idea."
+      "title": "Respect Permission",
+      "paragraph": "Private messages, phones, photos, and conversations should not be opened, copied, recorded, or shared without permission."
     },
+
     {
-      "title": "Try, notice, refine",
-      "paragraph": "Treat each draft as an experiment. Make a thoughtful change, notice what improves, and keep refining until it feels simple and alive."
+      "title": "Protect Digital Trust",
+      "paragraph": "Protecting private information strengthens trust, dignity, friendships, families, and responsible online communication."
     }
   ],
+
   "floatingText": [
     {
-      "title": "Start with attention",
-      "paragraph": "Notice the details that make an experience feel clear."
+      "title": "Digital Spying",
+      "paragraph": "Curiosity does not create permission to enter someone’s private life."
     },
+
     {
-      "title": "Make room for a point of view",
-      "paragraph": "Choose what matters. Let useful details speak."
+      "title": "Do Not Spy",
+      "paragraph": "Avoid suspicion before it turns into searching and invading privacy."
     },
+
     {
-      "title": "Follow the small details",
-      "paragraph": "Small choices become meaningful when they share an idea."
+      "title": "Ask Permission",
+      "paragraph": "Silence should never automatically be treated as consent."
     },
+
     {
-      "title": "Try, notice, refine",
-      "paragraph": "Make a thoughtful change, then keep refining."
+      "title": "Protect Trust",
+      "paragraph": "Guard private information even when nobody else is watching."
     }
   ],
+
   "floatingTextColorStops": [
     {
       "percentage": 0,
       "title": "#fff4f0",
       "paragraph": "#d9d1d5"
     },
+
     {
       "percentage": 25,
       "title": "#ffd1e8",
       "paragraph": "#f2bed8"
     },
+
     {
       "percentage": 50,
       "title": "#d8d9ff",
       "paragraph": "#c9c8e8"
     },
+
     {
       "percentage": 75,
       "title": "#d8f2e7",
       "paragraph": "#bfe2d3"
     },
+
     {
       "percentage": 100,
       "title": "#ffe6b8",
