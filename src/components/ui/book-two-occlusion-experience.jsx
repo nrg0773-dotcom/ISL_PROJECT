@@ -13,11 +13,7 @@ import {
 import * as THREE from 'three'
 import { useNavigate, useParams } from 'react-router-dom'
 import macModel from './book-two-occlusion/assets/mac-draco.glb?url'
-
-const LOBSTER_TWO_FONT =
-  'https://fonts.gstatic.com/s/lobstertwo/v22/BngMUXZGTXPUvIoyV6yN59fK.ttf'
-const STORY_SCRIPT_FONT =
-  'https://fonts.gstatic.com/s/storyscript/v3/mem5YaSw02SQ0OlzDuR8Isk-VQ.ttf'
+import { lobsterTwoFont, storyScriptFont } from '@/lib/book-fonts'
 
 function ReadingPage({
   cards,
@@ -183,7 +179,7 @@ function FloatingChapterText({
           anchorX="left"
           anchorY="bottom"
           color="#ffffff"
-          font={LOBSTER_TWO_FONT}
+          font={lobsterTwoFont}
           fontSize={compactLayout ? 0.34 : 0.4}
           maxWidth={compactLayout ? 3.4 : 3}
           fillOpacity={1}
@@ -196,7 +192,7 @@ function FloatingChapterText({
           anchorX="left"
           anchorY="top"
           color="#c9c8d0"
-          font={STORY_SCRIPT_FONT}
+          font={storyScriptFont}
           fontSize={compactLayout ? 0.18 : 0.2}
           lineHeight={1.45}
           maxWidth={compactLayout ? 3.4 : 3}
@@ -210,7 +206,7 @@ function FloatingChapterText({
           anchorX="left"
           anchorY="bottom"
           color="#ffffff"
-          font={LOBSTER_TWO_FONT}
+          font={lobsterTwoFont}
           fontSize={compactLayout ? 0.34 : 0.4}
           maxWidth={compactLayout ? 3.4 : 3}
           fillOpacity={1}
@@ -223,7 +219,7 @@ function FloatingChapterText({
           anchorX="left"
           anchorY="top"
           color="#c9c8d0"
-          font={STORY_SCRIPT_FONT}
+          font={storyScriptFont}
           fontSize={compactLayout ? 0.18 : 0.2}
           lineHeight={1.45}
           maxWidth={compactLayout ? 3.4 : 3}

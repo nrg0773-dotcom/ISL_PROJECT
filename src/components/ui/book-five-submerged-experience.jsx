@@ -10,11 +10,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Environment, Float, Text, useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
 import { useNavigate, useParams } from 'react-router-dom'
-
-const LOBSTER_TWO_FONT =
-  'https://fonts.gstatic.com/s/lobstertwo/v22/BngMUXZGTXPUvIoyV6yN59fK.ttf'
-const STORY_SCRIPT_FONT =
-  'https://fonts.gstatic.com/s/storyscript/v3/mem5YaSw02SQ0OlzDuR8Isk-VQ.ttf'
+import { lobsterTwoFont, storyScriptFont } from '@/lib/book-fonts'
 
 function Rig({ children, paused, cycle, intervalSeconds, onPause }) {
   const elapsed = useRef(0)
@@ -147,7 +143,7 @@ function JourneyText({ note, index, total, visible }) {
           anchorX="left"
           anchorY="middle"
           color="#ffffff"
-          font={LOBSTER_TWO_FONT}
+          font={lobsterTwoFont}
           fontSize={0.98 * textScale}
           maxWidth={maxWidth}
           material-depthTest={false}
@@ -166,7 +162,7 @@ function JourneyText({ note, index, total, visible }) {
           anchorX="left"
           anchorY="top"
           color="#ffffff"
-          font={STORY_SCRIPT_FONT}
+          font={storyScriptFont}
           fontSize={paragraphFontSize}
           lineHeight={1.28}
           maxWidth={maxWidth}

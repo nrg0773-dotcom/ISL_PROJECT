@@ -1,6 +1,7 @@
 import { lazy, Suspense, useLayoutEffect, useMemo, useState } from 'react'
 import {
   BrowserRouter,
+  HashRouter,
   Navigate,
   Route,
   Routes,
@@ -17,6 +18,7 @@ import { RippleTransition } from '@/components/ui/ripple-transition'
 import VantaBackgroundControls from '@/components/ui/vanta-background-controls'
 import bookManifest from '../content/books.json'
 import windowContent from '../content/window.json'
+import { submergedSceneUrl } from '@/lib/model-urls'
 
 const BookTwoOcclusionExperience = lazy(() =>
   import('@/components/ui/book-two-occlusion-experience').then((module) => ({
@@ -236,7 +238,7 @@ function BookSpace() {
       >
         <BookFiveSubmergedExperience
           journey={book.journey}
-          model={book.submergedEra}
+          model={{ ...book.submergedEra, modelUrl: submergedSceneUrl }}
         />
       </Suspense>
     )
@@ -447,10 +449,12 @@ function RoutedPages() {
 }
 
 function App() {
+  const Router = __STANDALONE__ ? HashRouter : BrowserRouter
+
   return (
-    <BrowserRouter>
+    <Router>
       <RoutedPages />
-    </BrowserRouter>
+    </Router>
   )
 }
 

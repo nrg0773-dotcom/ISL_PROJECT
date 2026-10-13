@@ -8,10 +8,12 @@ import { animate } from "framer-motion";
 import * as React from "react";
 
 const sampleImages = [
-  "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=85&w=1800",
-  "https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&q=85&w=1800",
-  "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=85&w=1800"
-];
+  "#101318",
+  "#17191d",
+  "#20232b",
+].map((color) =>
+  `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><rect width="2" height="2" fill="${color}"/></svg>`)}`,
+);
 
 const vertexSource = `
 attribute vec2 position;

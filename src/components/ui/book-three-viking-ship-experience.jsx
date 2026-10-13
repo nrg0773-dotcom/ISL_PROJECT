@@ -17,11 +17,7 @@ import {
 import * as THREE from 'three'
 import { useNavigate, useParams } from 'react-router-dom'
 import shipModel from './book-three-viking-ship/thor-and-the-midgard-serpent-transformed.glb?url'
-
-const LOBSTER_TWO_FONT =
-  'https://fonts.gstatic.com/s/lobstertwo/v22/BngMUXZGTXPUvIoyV6yN59fK.ttf'
-const STORY_SCRIPT_FONT =
-  'https://fonts.gstatic.com/s/storyscript/v3/mem5YaSw02SQ0OlzDuR8Isk-VQ.ttf'
+import { lobsterTwoFont, storyScriptFont } from '@/lib/book-fonts'
 
 function Rig({
   children,
@@ -173,7 +169,7 @@ function JourneyText({
         anchorX="left"
         anchorY="middle"
         color="#171411"
-        font={LOBSTER_TWO_FONT}
+        font={lobsterTwoFont}
         fontSize={0.82}
         maxWidth={8.5}
         material-transparent
@@ -188,7 +184,7 @@ function JourneyText({
         anchorX="left"
         anchorY="top"
         color="#171411"
-        font={STORY_SCRIPT_FONT}
+        font={storyScriptFont}
         fontSize={0.42}
         lineHeight={1.35}
         maxWidth={8.5}

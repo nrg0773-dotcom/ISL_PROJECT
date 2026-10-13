@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useCallback, useEffect, useMemo, useRef, useState, Suspense } from "react";
 import { useGLTF } from "@react-three/drei";
+import { bookshelfSceneUrl } from "@/lib/model-urls";
 import * as THREE from "three";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 
@@ -752,7 +753,7 @@ function CameraRig({
 }
 
 function WatercolorScene() {
-  const { scene } = useGLTF("/models/handpainted-watercolor-scene/scene.gltf");
+  const { scene } = useGLTF(bookshelfSceneUrl);
   const model = useMemo(() => scene.clone(true), [scene]);
   const { center, scale } = useMemo(() => {
     model.updateMatrixWorld(true);
